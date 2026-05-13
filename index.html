@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sariluxy Empire - Excellence in Manufacturing, Delivered with Precision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #332112;
+            --color-accent: #cf7920;
+            --color-bg: #F5EFE6;
+            --color-text: #2C1810;
+            --color-surface: #311e17;
+            --color-secondary-accent: #827771;
+            --font-display: 'Oswald', sans-serif;
+            --font-body: 'Lato', sans-serif;
+            --border-radius: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 239, 230, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            max-width: 700px;
+            padding-left: 4rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--color-primary);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--color-surface);
+            color: var(--color-bg);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        #about h2 {
+            color: var(--color-accent);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #services {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .services-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-primary);
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .services-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent);
+            transform: rotate(45deg);
+        }
+
+        .services-list strong {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose-us {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        #why-choose-us h2 {
+            color: var(--color-accent);
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .why-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: -8px 8px 0 var(--color-accent);
+        }
+
+        .why-list {
+            list-style: none;
+        }
+
+        .why-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.125rem;
+        }
+
+        .why-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .why-list strong {
+            font-family: var(--font-display);
+            color: var(--color-accent);
+        }
+
+        /* Contact Section */
+        #contact {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        .contact-info {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+            background: white;
+            padding: 2rem;
+            box-shadow: 4px 4px 0 var(--color-primary);
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-details strong {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            min-width: 80px;
+        }
+
+        .contact-details a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--color-primary);
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: #1EBE57;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #1EBE57;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float::before {
+            content: '💬';
+            font-size: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-surface);
+            color: var(--color-bg);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.25rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 0;
+            }
+
+            .hero-content {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.125rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+
+            .about-content,
+            .services-container,
+            .why-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image,
+            .services-image,
+            .why-image,
+            .contact-image {
+                height: 350px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float::before {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">SARILUXY EMPIRE</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/33790192/pexels-photo-33790192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing facility" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Sariluxy Empire</h1>
+            <p class="tagline">Excellence in Manufacturing, Delivered with Precision</p>
+            <p>Welcome to Sariluxy Empire - Your Trusted Manufacturing Partner in Calabar. We deliver quality manufacturing solutions that meet international standards while serving the Nigerian market with excellence and reliability.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <img src="https://images.pexels.com/photos/14804699/pexels-photo-14804699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing team" class="about-image">
+                <div class="about-text">
+                    <p>Sariluxy Empire is a leading manufacturing company based in Calabar Municipality, Cross River State. We are committed to delivering exceptional manufacturing solutions that drive business growth across Nigeria. Our state-of-the-art facility combines modern technology with skilled craftsmanship to produce high-quality products that meet the diverse needs of our clients.</p>
+                    <p>With a focus on precision, efficiency, and customer satisfaction, we have built a reputation as a reliable manufacturing partner for businesses across various sectors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <img src="https://images.pexels.com/photos/36823725/pexels-photo-36823725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing processes" class="services-image">
+                <div>
+                    <p style="margin-bottom: 2rem;">At Sariluxy Empire, we offer comprehensive manufacturing solutions tailored to your business needs:</p>
+                    <ul class="services-list">
+                        <li>
+                            <strong>Custom Manufacturing</strong>
+                            <p>Bespoke production services designed to your exact specifications</p>
+                        </li>
+                        <li>
+                            <strong>Quality Control & Testing</strong>
+                            <p>Rigorous quality assurance processes ensuring product excellence</p>
+                        </li>
+                        <li>
+                            <strong>Product Development</strong>
+                            <p>From concept to completion, we bring your ideas to life</p>
+                        </li>
+                        <li>
+                            <strong>Supply Chain Management</strong>
+                            <p>Efficient logistics and inventory solutions</p>
+                        </li>
+                        <li>
+                            <strong>Consulting Services</strong>
+                            <p>Expert manufacturing advice for business optimization</p>
+                        </li>
+                    </ul>
+                    <p>Every project receives our full attention to detail, ensuring timely delivery and superior quality that exceeds expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Sariluxy Empire</h2>
+            <div class="why-content">
+                <ul class="why-list">
+                    <li><strong>Proven Track Record</strong> - Years of manufacturing excellence in Calabar and beyond</li>
+                    <li><strong>Quality Assurance</strong> - We maintain the highest standards in every product we manufacture</li>
+                    <li><strong>Competitive Pricing</strong> - Premium quality at affordable rates for Nigerian businesses</li>
+                    <li><strong>Timely Delivery</strong> - We respect deadlines and ensure your projects are completed on schedule</li>
+                    <li><strong>Local Expertise</strong> - Deep understanding of the Nigerian manufacturing landscape</li>
+                    <li><strong>Customer-Centric Approach</strong> - Your satisfaction is our priority</li>
+                </ul>
+                <img src="https://images.pexels.com/photos/5668841/pexels-photo-5668841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Client partnership" class="why-image">
+            </div>
+            <p style="margin-top: 2rem; text-align: center; font-size: 1.125rem;">When you partner with Sariluxy Empire, you gain a manufacturing ally committed to your success.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Ready to discuss your manufacturing needs? Get in touch with Sariluxy Empire today.</p>
+                    <p>Whether you need a quote, want to discuss a project, or have questions about our manufacturing capabilities, our team is here to help. We're conveniently located in Calabar Municipality and ready to serve businesses across Cross River State and Nigeria.</p>
+                    <p>Visit our facility at Shop 101, Marian Market, Calabar Municipality, or reach out via phone or WhatsApp. Let's transform your manufacturing vision into reality.</p>
+                    <div class="contact-details">
+                        <p><strong>Phone:</strong> <a href="tel:+2347035578294">07035578294</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@sariluxyempire.com">info@sariluxyempire.com</a></p>
+                        <p><strong>Address:</strong> Shop 101, Marian Market, Calabar Municipality, Cross River State, Nigeria</p>
+                        <a href="https://wa.me/2347035578294" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
+                    </div>
+                </div>
+                <img src="https://images.pexels.com/photos/5453838/pexels-photo-5453838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Customer service" class="contact-image">
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2347035578294" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sariluxy Empire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
