@@ -1,0 +1,49 @@
+{
+  "businessName": "Sariluxy Empire",
+  "industry": "Manufacturing",
+  "tone": "professional",
+  "tagline": "Excellence in Manufacturing, Delivered with Precision",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Sariluxy Empire - Your Trusted Manufacturing Partner in Calabar. We deliver quality manufacturing solutions that meet international standards while serving the Nigerian market with excellence and reliability.",
+      "imagePrompt": "A modern Nigerian manufacturing facility in Calabar with workers in safety gear operating precision equipment, bright natural lighting streaming through large windows, clean industrial environment with blue and silver machinery, professional atmosphere, photorealistic, high quality",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Sariluxy Empire is a leading manufacturing company based in Calabar Municipality, Cross River State. We are committed to delivering exceptional manufacturing solutions that drive business growth across Nigeria. Our state-of-the-art facility combines modern technology with skilled craftsmanship to produce high-quality products that meet the diverse needs of our clients. With a focus on precision, efficiency, and customer satisfaction, we have built a reputation as a reliable manufacturing partner for businesses across various sectors.",
+      "imagePrompt": "Interior of a bustling Nigerian manufacturing plant with diverse team of Nigerian workers collaborating around manufacturing equipment, warm professional lighting, modern industrial setting with organized workstations, blue and white color scheme, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "At Sariluxy Empire, we offer comprehensive manufacturing solutions tailored to your business needs:\n\n• Custom Manufacturing - Bespoke production services designed to your exact specifications\n• Quality Control & Testing - Rigorous quality assurance processes ensuring product excellence\n• Product Development - From concept to completion, we bring your ideas to life\n• Supply Chain Management - Efficient logistics and inventory solutions\n• Consulting Services - Expert manufacturing advice for business optimization\n\nEvery project receives our full attention to detail, ensuring timely delivery and superior quality that exceeds expectations.",
+      "imagePrompt": "A collage showing various manufacturing processes in a Nigerian facility: precision cutting, assembly line, quality inspection with calipers, packaging station, all with professional Nigerian workers, bright industrial lighting, clean organized environment, photorealistic",
+      "layout": "grid"
+    },
+    {
+      "id": "why-choose-us",
+      "name": "Why Choose Sariluxy Empire",
+      "copy": "• Proven Track Record - Years of manufacturing excellence in Calabar and beyond\n• Quality Assurance - We maintain the highest standards in every product we manufacture\n• Competitive Pricing - Premium quality at affordable rates for Nigerian businesses\n• Timely Delivery - We respect deadlines and ensure your projects are completed on schedule\n• Local Expertise - Deep understanding of the Nigerian manufacturing landscape\n• Customer-Centric Approach - Your satisfaction is our priority\n\nWhen you partner with Sariluxy Empire, you gain a manufacturing ally committed to your success.",
+      "imagePrompt": "A Nigerian manufacturing manager shaking hands with a client in a modern factory setting, workers visible in background operating machinery, bright natural lighting, professional atmosphere, certificates and quality awards visible on wall, photorealistic",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your manufacturing needs? Get in touch with Sariluxy Empire today.\n\nWhether you need a quote, want to discuss a project, or have questions about our manufacturing capabilities, our team is here to help. We're conveniently located in Calabar Municipality and ready to serve businesses across Cross River State and Nigeria.\n\nVisit our facility at Shop 101, Marian Market, Calabar Municipality, or reach out via phone or WhatsApp. Let's transform your manufacturing vision into reality.",
+      "imagePrompt": "Professional Nigerian customer service representative at a modern reception desk with phone and computer, welcoming atmosphere, Marian Market Calabar signage visible, bright clean office space with plants, warm lighting, photorealistic",
+      "layout": "split"
+    }
+  ],
+  "contact": {
+    "phone": "07035578294",
+    "email": "info@sariluxyempire.com",
+    "address": "Shop 101, Marian Market, Calabar Municipality, Cross River State, Nigeria",
+    "whatsapp": "https://wa.me/2347035578294"
+  }
+}
